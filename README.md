@@ -10,6 +10,7 @@ These are experiments inspired by [Azure Machine Learning Python SDK notebooks](
     PIP_REQUIRE_VIRTUALENV=false pip install azureml-core
     conda install scikit-learn
     conda install conda
+    conda install matplotlib
 
 ## Start Jupyter notebooks
 
