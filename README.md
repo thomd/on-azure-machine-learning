@@ -11,7 +11,10 @@ These are experiments inspired by [Azure Machine Learning Python SDK notebooks](
     conda install scikit-learn
     conda install conda
 
-## Start
+## Start Jupyter notebooks
 
     jupyter lab
 
+## Experiments
+
+* [Train a model on local computer](https://nbviewer.jupyter.org/github/thomd/on-azure-machine-learning/blob/main/train-model-local/train-local.ipynb)
