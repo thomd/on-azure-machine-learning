@@ -17,4 +17,4 @@ These are experiments inspired by [Azure Machine Learning Python SDK notebooks](
 
 ## Experiments
 
-* [Train a model on local computer](https://github.com/thomd/on-azure-machine-learning/blob/main/train-model-local/train-local.ipynb)
+* [train-model-local/train-local.ipynb](https://github.com/thomd/on-azure-machine-learning/blob/main/train-model-local/train-local.ipynb): train a model using local computer as compute target
