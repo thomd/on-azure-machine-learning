@@ -13,19 +13,17 @@ X, y = load_diabetes(return_X_y=True)
 
 run = Run.get_context()
 
-X_train, X_test, y_train, y_test = train_test_split(X, y, test_size=0.2, random_state=0)
-data = {"train": {"X": X_train, "y": y_train},
-        "test": {"X": X_test, "y": y_test}}
+X_train, X_test, y_train, y_test = train_test_split(X, y, test_size=0.2)
 
 for alpha in np.arange(0.0, 1.0, 0.05):
     reg = Ridge(alpha=alpha)
-    reg.fit(data["train"]["X"], data["train"]["y"])
-    preds = reg.predict(data["test"]["X"])
-    mse = mean_squared_error(preds, data["test"]["y"])
+    reg.fit(X_train, y_train)
+    preds = reg.predict(X_test)
+    mse = mean_squared_error(preds, y_test)
     run.log('alpha', alpha)
     run.log('mse', mse)
     model_file_name = 'ridge_{0:.2f}.pkl'.format(alpha)
-    with open(model_file_name, "wb") as file:
+    with open(model_file_name, 'wb') as file:
         joblib.dump(value=reg, filename=os.path.join('./outputs/', model_file_name))
 
     print('alpha is {0:.2f}, and mse is {1:0.2f}'.format(alpha, mse))
